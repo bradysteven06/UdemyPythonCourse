@@ -39,7 +39,6 @@ def employee_check(work_hours):
     return (employee_of_month, current_max)
 
 
-
 if __name__ == '__main__':
 
     say_hello("kevin")
