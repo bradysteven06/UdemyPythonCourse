@@ -31,13 +31,11 @@ def old_macdonald(name):
     second_part = name[3:]
     first_part = first_part.capitalize()
     second_part = second_part.capitalize()
-    print(first_part)
-    print(second_part)
-    mystring = ""
-    mystring = mystring.join(first_part)
-    mystring = mystring.join(second_part)
-    print(mystring)
-    return mystring
+    mylist = []
+    mylist.append(first_part)
+    mylist.append(second_part)
+    return "".join(mylist)
+
 
 if __name__ == '__main__':
 
