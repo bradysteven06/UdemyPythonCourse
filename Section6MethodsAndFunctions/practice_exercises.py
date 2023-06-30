@@ -1,17 +1,20 @@
 def lesser_of_two_evens(num1, num2):
+    result = 0
     if num1 % 2 == 0 and num2 % 2 == 0:
         if num1 < num2:
-            return num1
+            result = num1
         else:
-            return num2
+            result = num2
     else:
         if num1 > num2:
-            return num1
+            result = num1
         else:
-            return num2
+            result = num2
+    return result
 
 
 def animal_crackers(my_string):
+
     split_string = my_string.split()
     if split_string[0][0].lower() == split_string[1][0].lower():
         return True
