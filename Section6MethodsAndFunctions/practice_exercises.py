@@ -104,8 +104,39 @@ def summer_69(num_list):
     return sum_total
 
 
+def spy_game(num_list):
+    first_zero = False
+    second_zero = False
+    for num in num_list:
+        if num == 0:
+            if not first_zero:
+                first_zero = True
+            elif first_zero:
+                second_zero = True
+        elif num == 7:
+            if first_zero and second_zero:
+                return True
+            else:
+                first_zero = False
+        else:
+            first_zero = False
+            second_zero = False
+    return False
+
+
+def count_primes(num):
+    prime_count = 0
+    for number in range(2, num+1):
+        is_prime = True
+        for n in range(2, number):
+            if number % n == 0:
+                is_prime = False
+        if is_prime:
+            prime_count += 1
+    return prime_count
+
+
 if __name__ == '__main__':
 
     print(old_macdonald("macdonald"))
-
 
