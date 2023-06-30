@@ -136,7 +136,13 @@ def count_primes(num):
     return prime_count
 
 
+def print_big(letter):
+    big_letters = {'a': "  *  \n * * \n*****\n*   *\n*   *",
+                   'b': "**** \n*   *\n****  \n*   *\n**** "}
+    return big_letters[letter.lower()]
+
+
 if __name__ == '__main__':
 
     print(old_macdonald("macdonald"))
-
+    print(print_big('B'))
