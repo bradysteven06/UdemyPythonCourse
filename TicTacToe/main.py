@@ -34,15 +34,38 @@ def make_move():
     valid_move = get_move()
 
 
-def check_win():
+def check_win(board):
     is_winner = False
+
+    # horizontal check
+    if board[0][0] == board[0][1] and board[0][0] == board[0][2]:
+        is_winner = True
+    elif board[1][0] == board[1][1] and board[1][0] == board[1][2]:
+        is_winner = True
+    elif board[2][0] == board[2][1] and board[2][0] == board[2][2]:
+        is_winner = True
+    # vertical check
+    elif board[0][0] == board[1][0] and board[0][0] == board[2][0]:
+        is_winner = True
+    elif board[0][1] == board[1][1] and board[0][1] == board[2][1]:
+        is_winner = True
+    elif board[0][2] == board[1][2] and board[0][2] == board[2][2]:
+        is_winner = True
+    # diagonal check
+    elif board[0][0] == board[1][1] and board[0][0] == board[2][2]:
+        is_winner = True
+    elif board[0][2] == board[1][1] and board[0][2] == board[2][0]:
+        is_winner = True
+
+    return is_winner
 
 
 if __name__ == '__main__':
 
     display_instructions()
-    board = create_board()
-    print(board)
-    display_board(board)
+    game_board = create_board()
+    display_board(game_board)
+    print(check_win(game_board))
+
 
 
