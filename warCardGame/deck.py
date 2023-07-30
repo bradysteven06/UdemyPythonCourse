@@ -12,7 +12,7 @@ class Deck:
         for suit in Card.suits:
             for rank in Card.ranks:
                 # This assumes the Card class has already been defined!
-                self.all_cards.append(Card(suit, rank))
+                self.all_cards.append(Card(suit, rank, Deck.values[rank]))
 
     def shuffle(self):
         # Note this doesn't return anything
