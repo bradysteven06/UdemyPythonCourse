@@ -1,3 +1,5 @@
+from player import Player
+from deck import Deck
 
 
 if __name__ == '__main__':
@@ -17,4 +19,18 @@ if __name__ == '__main__':
     # Determine the winner and adjust the Player's chips accordingly
     # Ask the Player if they'd like to play again
 
+    new_deck = Deck()
+    kevin = Player("Kevin")
+    dealer = Player("Dealer")
+    game_over = False
+
+    new_deck.shuffle()
+    kevin.add_cards(new_deck.deal_one())
+    kevin.add_cards(new_deck.deal_one())
+    kevin.show_first_card()
+    kevin.show_all_cards()
+
+
+    #while not game_over:
+    #    current_bet = 0
 
