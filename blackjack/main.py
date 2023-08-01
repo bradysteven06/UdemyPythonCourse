@@ -2,6 +2,19 @@ from player import Player
 from deck import Deck
 
 
+def ask_for_bet(total_chips):
+    while True:
+        bet = input(f"You have {total_chips} chips. How many do you bet? ")
+        try:
+            bet = int(bet)
+            if 0 < bet <= total_chips:
+                return bet
+            else:
+                print(f"Invalid bet. You must bet at least 1 chip and no more than {total_chips} chips.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+
 if __name__ == '__main__':
     print("Blackjack")
 
@@ -20,17 +33,18 @@ if __name__ == '__main__':
     # Ask the Player if they'd like to play again
 
     new_deck = Deck()
-    kevin = Player("Kevin")
+    playing = True
+    player = Player("Kevin")
     dealer = Player("Dealer")
-    game_over = False
+    bob = Player("Bob")
 
     new_deck.shuffle()
-    kevin.add_cards(new_deck.deal_one())
-    kevin.add_cards(new_deck.deal_one())
-    kevin.show_first_card()
-    kevin.show_all_cards()
+    player.place_bet(ask_for_bet(player.chips.total))
 
+    for num in range(2):
+        player.hand.add_cards(new_deck.deal_one())
+        dealer.hand.add_cards(new_deck.deal_one())
 
-    #while not game_over:
-    #    current_bet = 0
-
+    print(player.chips.bet)
+    print(player)
+    print(dealer)
